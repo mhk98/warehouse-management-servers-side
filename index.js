@@ -20,12 +20,8 @@ async function run() {
   try {
     await client.connect();
     console.log("db connected");
-    const productCollection = client
-      .db(process.env.DB_NA)
-      .collection("product");
-    const newProductCollection = client
-      .db(process.env.DB_NA)
-      .collection("newProduct");
+    const productCollection = client.db("xAutos").collection("product");
+    const newProductCollection = client.db("xAutos").collection("newProduct");
 
     //GET
     app.get("/product", async (req, res) => {
